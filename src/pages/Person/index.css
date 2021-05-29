@@ -1,0 +1,32 @@
+.person {
+    color: #ecd014;
+    border:1px solid #ecd014;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width:600px;
+}
+
+.person h1{
+    color: #ecd014;
+    align-self: center;
+}
+.person__details{
+    color:white;
+}
+
+.person__details p {
+    display: flex;
+    justify-content:space-between;
+}
+
+.person  button{
+    margin-top:20px;
+    border:1px solid yellow;
+    background-color:  #ecd014;
+    outline:black;
+    width:50%;
+    align-self: center;
+}
+
