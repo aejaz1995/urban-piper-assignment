@@ -8,6 +8,7 @@ import { HiOutlineArrowNarrowLeft } from "react-icons/hi"
 function Person() {
 
   const [ details, setDetails ] = useState( {} )
+  const [ error, setError ] = useState(false)
   const history = useHistory()
   const { id } = useParams()
   
@@ -16,7 +17,7 @@ function Person() {
     axios.get(`https://swapi.dev/api/people/${id}`)
 
     .then((response) => { setDetails({ ...response.data }) })
-
+    .catch((err) => { setError(true)})
   })
   
   // go back to home page
