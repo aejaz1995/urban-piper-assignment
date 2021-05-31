@@ -43,14 +43,15 @@ function HomePage() {
       useEnter("Enter", handleEnter)
 
       const handleClose = () =>{
-        setStr("")
+        setStr(" ")
       }
+
 
       const debounce=(func)=>{
          let timer
          return function(e) {
-          let arg  = e.target.value
           
+          let arg  = e.target.value          
           if(timer)
           {
             clearTimeout(timer)
@@ -76,7 +77,7 @@ function HomePage() {
       }
 
       const opt = useCallback(debounce((e) => handleChange(e)),[]);
-    
+      
 
   return (
     <div>
@@ -129,3 +130,33 @@ function HomePage() {
 }
 
 export default HomePage;
+
+
+
+// const getData = () => {
+//   axios.get(`https://swapi.dev/api/people/?search=${query}`)
+//     .then((res) => {
+//       let personList = [...res.data.results]
+//       if(query.length === 1){
+//         dispatch(getSuccess([]))
+//       } else {
+//         dispatch(getSuccess(personList.splice(0, 5)))
+//       }
+//     })
+// }
+
+// const debounce = (fn, delay) => {
+//   let timeOut;
+//   if(timeOut){
+//     clearTimeout(timeOut)
+//   }
+
+//   return function (){
+//     timeOut = setTimeout(() => {
+//       fn()
+//     }, delay);
+//   }
+// }
+
+// const debouncedReq = debounce(getData, 2000)
+
